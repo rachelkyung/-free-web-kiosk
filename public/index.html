@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .order-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1.2rem; /* 글자 크기 증가 */
+        }
+        .menu-item input[type="checkbox"] {
+            width: 20px; /* 체크박스 크기 증가 */
+            height: 20px; /* 체크박스 크기 증가 */
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            margin: 20px auto 0;
+        }
+        #confirmationMessage {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-form">
+        <label for="tableNumber">테이블 번호:</label>
+        <input type="text" id="tableNumber" placeholder="테이블 번호를 입력해주세요">
+        
+        <h2>메뉴</h2>
+        <div class="menu-item">
+            <span>참치마요</span>
+            <input type="checkbox" id="menu1">
+            <img src="menu1.jpg" alt="참치마요" width="120">
+        </div>
+        <div class="menu-item">
+            <span>치킨데리야끼</span>
+            <input type="checkbox" id="menu2">
+            <img src="menu2.jpg" alt="치킨데리야끼" width="120">
+        </div>
+        <div class="menu-item">
+            <span>불닭콘치즈마요</span>
+            <input type="checkbox" id="menu3">
+            <img src="menu3.jpg" alt="불닭콘치즈마요" width="120">
+        </div>
+        
+        <label for="requests">요청사항:</label>
+        <textarea id="requests" placeholder="요청사항을 입력해주세요"></textarea>
+        
+        <button id="submitOrder">주문하기</button>
+        <p id="confirmationMessage"></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
